@@ -1,0 +1,212 @@
+/* Basic reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+	/* Better text styling */
+	font: bold 14px Arial, sans-serif;
+}
+
+/* Finally adding some IE9 fallbacks for gradients to finish things up */
+
+/* A nice BG gradient */
+html {
+	height: 100%;
+	background: white;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: cover;
+}
+
+/* Using box shadows to create 3D effects */
+#calculator {
+	width: 85%;
+	height: auto;
+	position: relative;
+	
+	margin: 20px auto;
+	padding: 20px 20px 9px;
+	
+	background: #eee8aa;
+	background: linear-gradient(#F7DFA4, #fff8dc);
+	border-radius: 10px;
+	/*box-shadow: 0px 4px #a0522d, 0px 10px 15px rgba(0, 0, 0, 0.2);*/
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.64);
+}
+
+/* Top portion */
+.top span.clear {
+	float: left;
+}
+
+/* Inset shadow on the screen to create indent */
+.top .screen {
+	height: 60px;
+	width: 100%;
+	
+	float: centre;
+	
+	/*padding: 0 10px;*/
+	margin-bottom: 10px;
+	
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+	
+	/* Typography */
+	font-family:'Conv_digital-7',Sans-Serif;
+	font-size: 25px;
+	line-height: 60px;
+	color: #333333;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+	
+
+}
+
+/* Clear floats */
+.keys, .top {overflow: hidden;}
+
+/* Applying same to the keys */
+.keys span, .top span.clear {
+	float: left;
+	position: relative;
+	top: 0;
+	
+	cursor: pointer;
+	
+	width: 23%;
+	height: 40px;
+	
+	background: white;
+	border-radius: 3px;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	
+	margin: 0 7px 15px 0;
+	
+	color: #888;
+	line-height: 36px;
+	text-align: center;
+	
+	/* prevent selection of text inside keys */
+	user-select: none;
+	
+	/* Smoothing out hover and active states using css3 transitions */
+	transition: all 0.2s ease;
+}
+
+/* Remove right margins from operator keys */
+/* style different type of keys (operators/evaluate/clear) differently */
+.keys span.operator {
+	background: #FFF0F5;
+	margin-right: 0;
+}
+
+.keys span.eval {
+	background: #f1ff92;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	color: #888e5f;
+	width: 47%;
+	margin-right: 0px;
+}
+
+.top span.clear {
+	background: rgba(248, 31, 51, 1);
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.64);
+	color: white;
+}
+
+/* Some hover effects */
+.keys span:hover {
+	background: #777777;
+	-webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	color: white;
+}
+
+.keys span.eval:hover {
+	background: #abb850;
+	-webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+	background: rgba(248, 31, 51, 1);
+	-webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	-moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.64);
+	color: white;
+}
+
+/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
+.keys span:active {
+	box-shadow: 0px 0px #555555;
+	top: 4px;
+}
+
+.keys span.eval:active {
+	box-shadow: 0px 0px #555555;
+	top: 4px;
+}
+
+.top span.clear:active {
+	top: 4px;
+	box-shadow: 0px 0px #555555;
+}
+
+#container{
+	width:100%;
+	height: auto;
+	margin: auto;
+	padding-bottom: 10px;
+	
+
+	/*coloured gradient*/
+	background: #e536af; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #e536af 0%, #591544 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e536af), color-stop(100%,#591544)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #e536af 0%,#591544 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #e536af 0%,#591544 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #e536af 0%,#591544 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #e536af 0%,#591544 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e536af', endColorstr='#591544',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.logo{
+	width: 200px;
+	height: 150px;
+
+	background: url(images/logo.png);
+	margin: auto;
+}
+
+.title{
+	text-align: center;
+	font-size: 24px;
+	font-family: Arial;
+	width:90%;
+	margin: 15px auto;
+	margin-bottom: 0px;
+	color: white;
+}
+
+.subtext{
+	font-size: 10px;
+	font-family: Arial;
+	text-align: center;
+	color: white;
+
+}
